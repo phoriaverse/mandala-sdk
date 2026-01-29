@@ -1,4 +1,4 @@
-# Package Name ReadMe
+# Mandala SDK
 
 ## Description
 
