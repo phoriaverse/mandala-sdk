@@ -1,0 +1,22 @@
+{
+  "name": "com.phoria.mandala.sdk",
+  "displayName": "Mandala SDK",
+  "description": "The Mandala SDK contains assets that can be used to build VR-enhanced AssetBundles for the Mandala XR platform.",
+  "author": {
+    "name": "PHORIA Studios",
+    "email": "developers@phoria.com.au",
+    "url": "https://www.phoria.com.au/"
+  },
+  "repository": "github:phoriaverse/mandala-sdk.git",
+  "unity": "6000.2",
+  "unityRelease": "12f1",
+  "version": "1.0.0",
+  "type": "template",
+  "samples": [
+    {
+      "displayName": "Sample A",
+      "description": "Sample to demonstrate system A",
+      "path": "Samples~/Sample A"
+    }
+  ]
+}
