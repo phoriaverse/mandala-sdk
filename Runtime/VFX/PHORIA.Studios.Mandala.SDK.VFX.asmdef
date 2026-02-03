@@ -1,0 +1,14 @@
+{
+    "name": "PHORIA.Studios.Mandala.SDK.VFX",
+    "rootNamespace": "PHORIA.Studios.Mandala.SDK.VFX",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
