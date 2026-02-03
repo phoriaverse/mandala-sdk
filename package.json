@@ -18,5 +18,10 @@
       "description": "Sample to demonstrate system A",
       "path": "Samples~/Sample A"
     }
-  ]
+  ],
+  "dependencies": {
+    "com.unity.timeline": "1.8.10",
+    "com.unity.render-pipelines.universal": "17.2.0",
+    "com.meta.xr.sdk.core": "83.0.1"
+  }
 }
