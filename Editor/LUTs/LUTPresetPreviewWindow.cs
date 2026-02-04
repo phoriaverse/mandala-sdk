@@ -30,6 +30,7 @@ namespace PHORIA.Studios.Mandala.Editor
 		[Header("LUT Export")]
 		[SerializeField] private bool exportLutAlsoBuildsIfMissing = true;
 		[SerializeField] private bool flipVerticalLut = true; // top-left black LUTs (common) -> flip for bottom-left expectations
+		[SerializeField] private bool exportImporterSRGB = false; // output LUT texture importer sRGB flag (default OFF)
 
 		private Texture2D _previewOut;
 		private Texture2D _lutPreview; // 256 x 16, Standard strip layout
@@ -153,7 +154,7 @@ namespace PHORIA.Studios.Mandala.Editor
 				EditorGUILayout.Space(6);
 				exportLutAlsoBuildsIfMissing = EditorGUILayout.ToggleLeft("Export builds LUT automatically if missing", exportLutAlsoBuildsIfMissing);
 				flipVerticalLut = EditorGUILayout.ToggleLeft("Flip LUT vertically (Y)", flipVerticalLut);
-
+				exportImporterSRGB = EditorGUILayout.ToggleLeft("Export LUT importer sRGB (usually OFF for URP Color Lookup)",exportImporterSRGB);
 				EditorGUILayout.Space(8);
 
 				using (new EditorGUILayout.HorizontalScope())
@@ -406,7 +407,7 @@ namespace PHORIA.Studios.Mandala.Editor
 				AssetDatabase.ImportAsset(savePath, ImportAssetOptions.ForceUpdate);
 
 				// Make sure it imports as a LUT-friendly texture (Linear, Clamp, no mips).
-				ConfigureImportedLutTexture(savePath);
+				ConfigureImportedLutTexture(savePath,exportImporterSRGB);
 
 				EditorUtility.DisplayDialog("LUT exported", $"Saved LUT texture:\n{savePath}", "OK");
 			}
@@ -416,19 +417,30 @@ namespace PHORIA.Studios.Mandala.Editor
 			}
 		}
 
-		private static void ConfigureImportedLutTexture(string assetPath)
+		private static void ConfigureImportedLutTexture(string assetPath , bool sRGB)
 		{
 			var importer = AssetImporter.GetAtPath(assetPath) as TextureImporter;
 			if (importer == null) return;
 
 			importer.textureType = TextureImporterType.Default;
-			importer.sRGBTexture = true;
+			importer.sRGBTexture = sRGB;
 			importer.mipmapEnabled = false;
 			importer.wrapMode = TextureWrapMode.Clamp;
 			importer.filterMode = FilterMode.Bilinear; // Unity Color Lookup expects smooth sampling
 			importer.npotScale = TextureImporterNPOTScale.None;
 			importer.alphaSource = TextureImporterAlphaSource.FromInput;
 			importer.isReadable = true;                // optional, but useful for debug / re-export
+
+			//no compression for OVR passthrough compatibility 
+			importer.textureCompression = TextureImporterCompression.Uncompressed;
+			importer.crunchedCompression = false;
+
+			//Force Android safe guard 
+			var android = importer.GetPlatformTextureSettings("Android");
+			android.overridden = true;
+			android.format = TextureImporterFormat.RGB24;   
+			android.textureCompression = TextureImporterCompression.Uncompressed;
+			importer.SetPlatformTextureSettings(android);
 
 			importer.SaveAndReimport();
 		}
