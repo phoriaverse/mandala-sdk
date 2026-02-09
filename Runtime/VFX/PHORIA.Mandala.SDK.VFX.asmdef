@@ -1,12 +1,8 @@
 {
-    "name": "PHORIA.Studios.Mandala.SDK.VFX.Editor",
-    "rootNamespace": "PHORIA.Studios.Mandala.SDK.VFX.Editor",
-    "references": [
-        "PHORIA.Studios.Mandala.SDK.VFX"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "name": "PHORIA.Mandala.SDK.VFX",
+    "rootNamespace": "PHORIA.Mandala.SDK.VFX",
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
