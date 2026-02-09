@@ -1,0 +1,14 @@
+{
+    "name": "PHORIA.Mandala.SDK.Dolby",
+    "rootNamespace": "PHORIA.Mandala.SDK.Dolby",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
