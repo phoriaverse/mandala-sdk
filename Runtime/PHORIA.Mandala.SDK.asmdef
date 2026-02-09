@@ -1,12 +1,8 @@
 {
-    "name": "PHORIA.Studios.Mandala.SDK.Editor",
-    "rootNamespace": "PHORIA.Studios.Mandala.SDK.Editor",
-    "references": [
-        "PHORIA.Studios.Mandala.SDK"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "name": "PHORIA.Mandala.SDK",
+    "rootNamespace": "PHORIA.Mandala.SDK",
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
