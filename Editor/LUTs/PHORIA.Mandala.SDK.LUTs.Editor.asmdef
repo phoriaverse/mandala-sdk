@@ -1,8 +1,12 @@
 {
-    "name": "PHORIA.Studios.Mandala.SDK",
-    "rootNamespace": "PHORIA.Studios.Mandala.SDK",
-    "references": [],
-    "includePlatforms": [],
+    "name": "PHORIA.Mandala.SDK.LUTs.Editor",
+    "rootNamespace": "PHORIA.Mandala.SDK.LUTs.Editor",
+    "references": [
+        "PHORIA.Mandala.SDK.LUTs"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

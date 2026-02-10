@@ -1,6 +1,6 @@
 {
-    "name": "PHORIA.Studios.Mandala.SDK.VFX",
-    "rootNamespace": "PHORIA.Studios.Mandala.SDK.VFX",
+    "name": "PHORIA.Mandala.SDK.VFX",
+    "rootNamespace": "PHORIA.Mandala.SDK.VFX",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
