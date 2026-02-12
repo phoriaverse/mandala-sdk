@@ -2,7 +2,8 @@
     "name": "PHORIA.Mandala.SDK.Editor",
     "rootNamespace": "PHORIA.Mandala.SDK.Editor",
     "references": [
-        "PHORIA.Mandala.SDK"
+        "PHORIA.Mandala.SDK",
+        "Unity.Timeline.Editor"
     ],
     "includePlatforms": [
         "Editor"

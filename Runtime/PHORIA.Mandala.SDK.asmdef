@@ -1,7 +1,10 @@
 {
     "name": "PHORIA.Mandala.SDK",
     "rootNamespace": "PHORIA.Mandala.SDK",
-    "references": [],
+    "references": [
+        "Unity.Timeline",
+        "com.tiledmedia.player.runtime"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
